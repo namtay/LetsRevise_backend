@@ -9,8 +9,9 @@ var dbURL = require("./routes/properties").DB_URL;
 
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var usersRouter = require('./routes/User');
 var titleRouter = require('./routes/Title');
+var questionRouter = require('./routes/Question');
 
 var app = express();
 
@@ -45,8 +46,9 @@ mongoose.connect(dbURL,config)
 
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/user', usersRouter);
 app.use('/title', titleRouter);
+app.use("/question",questionRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

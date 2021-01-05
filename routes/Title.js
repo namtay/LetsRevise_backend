@@ -34,7 +34,7 @@ titleRouter.get("/",function(req,res,next){
 
 })
 
-
+/*get title by id */
 titleRouter.get("/:id",async function(req,res,next){
     const id = new ObjectID(req.params.id);   
     const title = await Title.findById(id).exec()        
