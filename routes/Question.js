@@ -60,7 +60,7 @@ questionRouter.post("/edit/:id",function(req,res,next){
 
         }else{
             findQuestion.question= req.body.question;
-            findQuestion.answer= req.body.answer;
+            findQuestion.correct_answer= req.body.correct_answer;
             findQuestion.save().then(findQuestion=>{
                 res.json(findQuestion)
             }).catch(err =>res.status(500).send(err.message))
